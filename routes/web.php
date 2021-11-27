@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HenController;
 use App\Http\Controllers\EggController;
 use App\Http\Controllers\StockController;
@@ -21,9 +22,22 @@ use App\Http\Controllers\RecordController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name(name:'admin.dashboard');
+
 Route::get('/admin/hens',[HenController::class,'henlist'])->name(name:'admin.hens');
 Route::get('/admin/hens/create',[HenController::class,'createhenlist'])->name(name:'admin.hens.create');
 Route::post('/admin/hens/store',[HenController::class,'store'])->name(name:'admin.hens.store');
+
+
+Route::get('/admin/hens/vaccine',[HenController::class,'vaccine'])->name(name:'admin.hens.vaccine');
+Route::get('/admin/hens/vaccine/create',[HenController::class,'createvaccine'])->name(name:'admin.hens.vaccine.create');
+Route::post('/admin/hens/vaccine/store2',[HenController::class,'store2'])->name(name:'admin.hens.vaccine.store2');
+
+
+Route::get('/admin/hens/food',[HenController::class,'food'])->name(name:'admin.hens.food');
+
 
 
 
@@ -41,6 +55,7 @@ Route::get('/admin/stock/create',[StockController::class,'createstocklist'])->na
 
 Route::get('/admin/records',[RecordController::class,'recordlist'])->name(name:'admin.records');
 Route::get('/admin/records/create',[RecordController::class,'createrecordlist'])->name(name:'admin.records.create');
+Route::post('admin/records/store',[RecordController::class,'store'])->name(name:'admin.records.store');
 
 
 

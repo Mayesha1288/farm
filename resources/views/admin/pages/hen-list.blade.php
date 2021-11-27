@@ -2,7 +2,10 @@
 
 @section('contents')
 <a href="/admin/hens/create" class="btn btn-success">Create Hen list</a>
-<table class="table">
+<a href="{{route('admin.hens.vaccine')}}" class="btn btn-primary">Check the Vaccine </a>
+<a href="{{route('admin.hens.food')}}" class="btn btn-info">Check the Food </a>
+
+<table class="table table-hover">
     <thead>
     <tr>
         <th scope="col">Id</th>
@@ -10,6 +13,8 @@
         <th scope="col">Weight</th>
         <th scope="col">Price</th>
         <th scope="col">Quantity</th>
+        <th scope="col">Description</th>
+        <th>Image</th>
     </tr>
     </thead>
     <tbody>
@@ -21,6 +26,10 @@
         <th>{{$hen->weight}}</th>
         <th>{{$hen->price}}</th>
         <th >{{$hen->quantity}}</th>
+        <th >{{$hen->description}}</th>
+        <th>
+                    <img src="{{url('/uploads/'.$hen->image)}}" width="100px" alt="hen image">
+                </th>
     </tr>
     @endforeach
     <!-- <tr>
@@ -39,8 +48,8 @@
         <th scope="row">3</th>
         <td colspan="2">Larry the Bird</td>
         <td>@twitter</td>
-    </tr>
-    </tbody> -->
+    </tr> -->
+    </tbody>
 </table>
 
 

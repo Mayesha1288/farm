@@ -18,6 +18,7 @@ class CreateEggsTable extends Migration
             $table->string('type');
             $table->double('price');
             $table->integer('quantity');
+            $table->string('image');
             $table->timestamps();
         });
     }

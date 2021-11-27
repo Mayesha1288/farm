@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main" style="height:100vh;">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white active bg-gradient-primary" href="/dashboard">
+          <a class="nav-link text-white active bg-gradient-primary" href="{{url('/admin/dashboard')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
@@ -23,25 +23,30 @@
           
         </li>
         <li>
-        <a class="nav-link text-white active bg-gradient-primary" href="/admin/hens">
+        <a class="nav-link text-white active bg-gradient-primary" href="{{url('/admin/hens')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">dashboard</i>
+            <!-- <i class="material-icons opacity-10">dashboard</i> -->
+
+            <i class="fab fa-the-red-yeti"></i>
             </div>
-            <span class="nav-link-text ms-1">Hen List</span>
+            <span class="nav-link-text ms-1">Information about Hens</span>
           </a>
         </li>
         <li>
         <a class="nav-link text-white active bg-gradient-primary" href="{{url('/admin/eggs')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">dashboard</i>
+            <!-- <i class="material-icons opacity-10">dashboard</i> -->
+            <i class="fas fa-egg"></i>
             </div>
-            <span class="nav-link-text ms-1">Egg List</span>
+            <span class="nav-link-text ms-1">Information about  Eggs</span>
           </a>
         </li>
         <li>
         <a class="nav-link text-white active bg-gradient-primary" href="/admin/stock">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">dashboard</i>
+            <!-- <i class="material-icons opacity-10">dashboard</i> -->
+
+            <i class="fas fa-cubes"></i>
             </div>
             <span class="nav-link-text ms-1">Stock</span>
           </a>
@@ -49,7 +54,9 @@
         <li>
          <a class="nav-link text-white active bg-gradient-primary" href="/admin/records">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">dashboard</i>
+            <!-- <i class="material-icons opacity-10">dashboard</i> -->
+
+            <i class="fas fa-clipboard"></i>
             </div>
             <span class="nav-link-text ms-1">Records</span>
           </a>
@@ -57,15 +64,16 @@
         <li>
           <a class="nav-link text-white active bg-gradient-primary" href="/admin/customer">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">dashboard</i>
+            <!-- <i class="material-icons opacity-10">dashboard</i> -->
+            <i class="fas fa-user-friends"></i>
             </div>
-            <span class="nav-link-text ms-1">Customer</span>
+            <span class="nav-link-text ms-1">Payment</span>
           </a>
         </li>
         <li>
           <a class="nav-link text-white active bg-gradient-primary" href="/admin/sales">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">dashboard</i>
+            <i class="fas fa-poll"></i>
             </div>
             <span class="nav-link-text ms-1">Sales</span>
           </a>

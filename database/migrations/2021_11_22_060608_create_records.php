@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHensTable extends Migration
+class CreateRecords extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateHensTable extends Migration
      */
     public function up()
     {
-        Schema::create('hens', function (Blueprint $table) {
+        Schema::create('records', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->double('weight');
-            $table->integer('price');
-            $table->integer('quantity');
-            $table->string('description');
-            $table->string('image');
-
+            $table->integer('hens_died');
+            $table->integer('sick_hens');
+            $table->integer('vaccinated_hens');
+            $table->integer('eggs_collected');
+            $table->integer('eggs_damaged');
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ class CreateHensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hens');
+        Schema::dropIfExists('records');
     }
 }

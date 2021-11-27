@@ -5,20 +5,26 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+    <th scope="col">ID</th>
+      <th scope="col">Hens Died</th>
+      <th scope="col">Sick Hens</th>
+      <th scope="col">vaccinated hens</th>
+      <th scope="col">eggs collected</th>
+      <th scope="col">eggs damaged</th>
     </tr>
   </thead>
   <tbody>
+  @foreach($recordlist as $record)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <th > {{$record->id}}</th>
+        <th > {{$record->hens_died}}</th>
+        <th>{{$record->sick_hens}}</th>
+        <th>{{$record->vaccinated_hens}}</th>
+        <th>{{$record->eggs_collected}}</th>
+        <th >{{$record->eggs_damaged}}</th>
     </tr>
-    <tr>
+    @endforeach
+    <!-- <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
       <td>Thornton</td>
@@ -28,7 +34,7 @@
       <th scope="row">3</th>
       <td colspan="2">Larry the Bird</td>
       <td>@twitter</td>
-    </tr>
+    </tr> -->
   </tbody>
 </table>
 @endsection
