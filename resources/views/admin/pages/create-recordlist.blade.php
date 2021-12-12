@@ -2,6 +2,13 @@
 
 @section('contents')
 
+<style>
+  input:focus {
+    outline: none !important;
+    border:2px solid 	green !important;
+    box-shadow: 0 0 10px #719ECE;
+}
+</style>
 
 @if ($errors->any())
         @foreach ($errors->all() as $error)

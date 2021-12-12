@@ -5,7 +5,7 @@
 <style>
   input:focus {
     outline: none !important;
-    border:1px solid 	rgb(77, 0, 0) !important;
+    border:2px solid 	rgb(77, 0, 0) !important;
     box-shadow: 0 0 10px #719ECE;
 }
 </style>
@@ -58,7 +58,7 @@
   <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
 </form>
 
-
+@endsection
 
 
 
@@ -95,4 +95,3 @@
   <textarea class="form-control" aria-label="With textarea"></textarea>
 </div> -->
 
-@endsection

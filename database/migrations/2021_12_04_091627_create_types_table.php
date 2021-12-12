@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHensTable extends Migration
+class CreateTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,9 @@ class CreateHensTable extends Migration
      */
     public function up()
     {
-        Schema::create('hens', function (Blueprint $table) {
+        Schema::create('types', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->double('weight');
-            $table->integer('price');
-            $table->integer('quantity');
-            $table->string('description');
-            $table->string('image');
-            $table->double('total')->nullable();
+            $table->string('hentype');
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ class CreateHensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hens');
+        Schema::dropIfExists('types');
     }
 }

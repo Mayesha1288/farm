@@ -19,7 +19,7 @@
     <style>
   input:focus {
     outline: none !important;
-    border:1px solid 	rgb(77, 0, 0) !important;
+    border:2px solid 	rgb(77, 0, 0) !important;
     box-shadow: 0 0 10px #719ECE;
 }
 </style>
@@ -29,8 +29,14 @@
   @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Hen Type</label>
-    <input  required name="type"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hen type">
+    <select  required name="type"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hen type">
     <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    <option > broiler</option>
+        <option > deshi</option>
+        <option > pakistani</option>
+        <option > layer</option>
+        <option > sonalika</option>
+</select>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Hen Weight</label>

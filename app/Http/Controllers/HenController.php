@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Hen;
+use App\Models\Food;
 use App\Models\Vaccine;
 use Illuminate\Http\Request;
 
@@ -87,7 +88,26 @@ class HenController extends Controller
 
    public function food()
    {
-       return view('admin.pages.henfood');
+    $foods=food::all();
+       return view('admin.pages.henfood',compact('foods'));
+   }
+   public function createfood()
+   {
+    
+    return view('admin.pages.create-food');
+    
+   }
+
+   public function store3(Request $request)
+   {
+    //    dd($request->all());
+       Food::create([
+        'food_name'=> $request->food_name,
+        'food_times'=> $request->time,
+        'food_hentype'=> $request->type,
+
+       ]); 
+       return redirect()->back()->with('msg','Food added successfully.');
    }
    
 }

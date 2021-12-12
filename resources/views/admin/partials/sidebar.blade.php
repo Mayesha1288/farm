@@ -33,7 +33,15 @@
           </a>
         </li>
         <li>
-        <a class="nav-link text-white active bg-gradient-primary" href="{{url('/admin/eggs')}}">
+          <a class="nav-link text-white active bg-gradient-primary" href="{{url('/admin/hentype')}}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            <!-- <i class="material-icons opacity-10">dashboard</i> -->
+            <i class="fas fa-search"></i>
+            </div>
+            <span class="nav-link-text ms-1">Hen Type</span>
+          </a>
+        <li>
+          <a class="nav-link text-white active bg-gradient-primary" href="{{url('/admin/eggs')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <!-- <i class="material-icons opacity-10">dashboard</i> -->
             <i class="fas fa-egg"></i>
@@ -49,6 +57,15 @@
             <i class="fas fa-cubes"></i>
             </div>
             <span class="nav-link-text ms-1">Stock</span>
+          </a>
+        </li>
+        <li>
+        <a class="nav-link text-white active bg-gradient-primary" href="/admin/customer">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+
+            <i class="fas fa-users"></i>
+            </div>
+            <span class="nav-link-text ms-1">Customer</span>
           </a>
         </li>
         <li>

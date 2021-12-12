@@ -14,6 +14,10 @@
     </tr>
   </thead>
   <tbody>
+
+  <!-- first we will write the variables name and then write the name which isgiven in the  database table -->
+    <!-- the first one is the one which is written in compact and the next one is variable -->
+    <!-- foreach is used for loop -->
   @foreach($recordlist as $record)
     <tr>
     <th > {{$record->id}}</th>
@@ -24,17 +28,7 @@
         <th >{{$record->eggs_damaged}}</th>
     </tr>
     @endforeach
-    <!-- <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr> -->
+    
   </tbody>
 </table>
 @endsection

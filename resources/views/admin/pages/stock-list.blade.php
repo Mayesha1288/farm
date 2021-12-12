@@ -5,30 +5,27 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Type</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total</th>
     </tr>
   </thead>
   <tbody>
+
+  @php $total  = 0; @endphp
+    @foreach($hens as $hen)
+    @php
+      $quantity = $hen->quantity;
+      $total = $total + $quantity;
+    @endphp
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th>{{$hen->type}}</th>
+      <td>{{$hen->price}}</td>
+      <td>{{$hen->quantity}}</td>
+      <td>{{$total}}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
 
