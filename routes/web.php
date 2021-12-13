@@ -32,15 +32,19 @@ Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name(na
 
 
 
+// all routes of hen
 
 Route::get('/admin/hens',[HenController::class,'henlist'])->name(name:'admin.hens');
 Route::get('/admin/hens/create',[HenController::class,'createhenlist'])->name(name:'admin.hens.create');
 Route::post('/admin/hens/store',[HenController::class,'store'])->name(name:'admin.hens.store');
+Route::get('hen/view/{hen_id}',[HenController::class,'henDetails'])->name('admin.hen.details');
+Route::get('hen/delete/{hen_id}',[HenController::class,'henDelete'])->name('admin.hen.delete');
 
 
 
 
 
+// all routes of hen vaccine
 
 Route::get('/admin/hens/vaccine',[HenController::class,'vaccine'])->name(name:'admin.hens.vaccine');
 Route::get('/admin/hens/vaccine/create',[HenController::class,'createvaccine'])->name(name:'admin.hens.vaccine.create');
@@ -52,6 +56,7 @@ Route::post('/admin/hens/vaccine/store2',[HenController::class,'store2'])->name(
 
 
 
+// all routes of  food 
 Route::get('/admin/hens/food',[HenController::class,'food'])->name(name:'admin.hens.food');
 Route::get('/admin/hens/food/create',[HenController::class,'createfood'])->name(name:'admin.hens.food.create');
 Route::post('/admin/hens/food/store3',[HenController::class,'store3'])->name(name:'admin.hens.food.store3');
@@ -60,7 +65,7 @@ Route::post('/admin/hens/food/store3',[HenController::class,'store3'])->name(nam
 
 
 
-
+// all type of hentype
 
 Route::get('/admin/hentype',[TypeController::class,'hentype'])->name(name:'admin.hentype');
 Route::get('/admin/hentype/create',[TypeController::class,'createhentype'])->name(name:'admin.hentype.create');
@@ -68,7 +73,7 @@ Route::post('/admin/hentype/store',[TypeController::class,'store'])->name(name:'
 
 
 
-
+// routes of egg
 
 Route::get('/admin/eggs',[EggController::class,'egglist'])->name(name:'admin.eggs');
 Route::get('/admin/eggs/create',[EggController::class,'createegglist'])->name('admin.eggs.create');

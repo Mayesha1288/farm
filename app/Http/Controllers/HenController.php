@@ -110,4 +110,20 @@ class HenController extends Controller
        return redirect()->back()->with('msg','Food added successfully.');
    }
    
+   public function henDetails($hen_id)
+   {
+
+//        collection= get(), all()====== read with loop (foreach)
+//       object= first(), find(), findOrFail(),======direct
+     $hen=Hen::find($hen_id);
+//      $product=Product::where('id',$product_id)->first();
+       return view('admin.pages.hendetails',compact('hen'));
+   }
+
+   public function henDelete($hen_id)
+   {
+      Hen::find($hen_id)->delete();
+      return redirect()->back()->with('success','Hen Deleted.');
+   }
 }
+
