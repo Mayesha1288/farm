@@ -36,4 +36,20 @@ class EggController extends Controller
         ]);
         return redirect()->back()->with('msg','Eggs added successfully.');;
     }
+
+    public function eggDetails($egg_id)
+    {
+ 
+ //        collection= get(), all()====== read with loop (foreach)
+ //       object= first(), find(), findOrFail(),======direct
+      $egg=Egg::find($egg_id);
+ //      $product=Product::where('id',$product_id)->first();
+        return view('admin.pages.eggdetails',compact('egg'));
+    }
+ 
+    public function eggDelete($egg_id)
+    {
+       Egg::find($egg_id)->delete();
+       return redirect()->back()->with('success','Egg Deleted.');
+    }
 }

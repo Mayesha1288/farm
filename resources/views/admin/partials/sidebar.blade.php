@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main" style="height:100vh;">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white active bg-gradient-primary" href="{{url('/admin/dashboard')}}">
+          <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.dashboard')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
@@ -23,7 +23,7 @@
           
         </li>
         <li>
-        <a class="nav-link text-white active bg-gradient-primary" href="{{url('/admin/hens')}}">
+        <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.hens')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <!-- <i class="material-icons opacity-10">dashboard</i> -->
 
@@ -33,7 +33,7 @@
           </a>
         </li>
         <li>
-          <a class="nav-link text-white active bg-gradient-primary" href="{{url('/admin/hentype')}}">
+          <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.hentype')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <!-- <i class="material-icons opacity-10">dashboard</i> -->
             <i class="fas fa-search"></i>
@@ -41,7 +41,7 @@
             <span class="nav-link-text ms-1">Hen Type</span>
           </a>
         <li>
-          <a class="nav-link text-white active bg-gradient-primary" href="{{url('/admin/eggs')}}">
+          <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.eggs')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <!-- <i class="material-icons opacity-10">dashboard</i> -->
             <i class="fas fa-egg"></i>
@@ -50,7 +50,7 @@
           </a>
         </li>
         <li>
-        <a class="nav-link text-white active bg-gradient-primary" href="/admin/stock">
+        <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.stocks')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <!-- <i class="material-icons opacity-10">dashboard</i> -->
 
@@ -60,7 +60,7 @@
           </a>
         </li>
         <li>
-        <a class="nav-link text-white active bg-gradient-primary" href="/admin/customer">
+        <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.customer')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
 
             <i class="fas fa-users"></i>
@@ -69,7 +69,7 @@
           </a>
         </li>
         <li>
-         <a class="nav-link text-white active bg-gradient-primary" href="/admin/records">
+         <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.records')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <!-- <i class="material-icons opacity-10">dashboard</i> -->
 
@@ -79,7 +79,7 @@
           </a>
         </li>
         <li>
-          <a class="nav-link text-white active bg-gradient-primary" href="/admin/customer">
+          <a class="nav-link text-white active bg-gradient-primary" href="">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <!-- <i class="material-icons opacity-10">dashboard</i> -->
             <i class="fas fa-user-friends"></i>
@@ -88,7 +88,7 @@
           </a>
         </li>
         <li>
-          <a class="nav-link text-white active bg-gradient-primary" href="/admin/sales">
+          <a class="nav-link text-white active bg-gradient-primary" href="">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class="fas fa-poll"></i>
             </div>

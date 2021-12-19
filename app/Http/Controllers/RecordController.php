@@ -23,13 +23,15 @@ class RecordController extends Controller
     //    dd($request->all());
 
     Record::create([
+        'date'=>$request->date,
         'hens_died'=>$request->hens_died,
         'sick_hens'=>$request->sick_hens,
         'vaccinated_hens'=>$request->vaccinated_hens,
         'eggs_collected'=>$request->eggs_collected,
-        'eggs_damaged'=>$request->eggs_damaged,
+        'eggs_damaged'=>$request->eggs_damaged
+        
 
     ]);
-    return redirect()->back()->with('msg','Records created successfully.');;
+    return redirect()->back()->with('msg','Records created successfully.');
    }
 }

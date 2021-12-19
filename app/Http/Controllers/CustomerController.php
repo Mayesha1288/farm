@@ -29,6 +29,6 @@ class CustomerController extends Controller
         
 
     ]);
-    return redirect()->back();
+    return redirect()->back()->with('msg','Customer Inserted  successfully.');
 }
 }

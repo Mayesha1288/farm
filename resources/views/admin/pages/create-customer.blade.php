@@ -10,27 +10,18 @@
 </style>
 
 
+@if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div>
+                <p class="alert alert-danger">{{$error}}</p>
+            </div>
+        @endforeach
+    @endif
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Customer Information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Customer Information Inserted Succesfully!
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
+    @if(session()->has('msg'))
+        <p class="alert alert-success">{{session()->get('msg')}}</p>
+    @endif
+
 
 <form  action="{{route('admin.customer.store')}}" method="post" >
   @csrf
@@ -53,11 +44,7 @@
 
   <br>
 
-  <!-- Button trigger modal -->
-<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
-  <!-- <button type="submit" class="btn btn-info">Let's Insert  this</button> -->
+  <button type="submit" class="btn btn-primary">Let's Enter this</button>
 </form>
 
 @endsection

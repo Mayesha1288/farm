@@ -7,7 +7,9 @@ use App\Http\Controllers\TypeController;
 use App\Http\Controllers\EggController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RecordController;
+
 
 
 /*
@@ -21,22 +23,37 @@ use App\Http\Controllers\RecordController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[LoginController::class,'login'])->name('admin.login');
+Route::post('/login',[LoginController::class,'doLogin'])->name('admin.doLogin');
+Route::group(['prefix'=>'admin'],function (){
+
+   
+
+    Route::group(['middleware'=>'auth'],function (){
+    Route::get('/', function () {
+        return view('admin.welcome');
+    })->name('welcome');
+
+    Route::get('/logout',[LoginController::class,'logout'])->name('admin.logout');
+
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // first we write get to view the page and post for submitimg orinserting the data, after that we write the contoller 
 // then the class and then the method name then write the name which is shown in the url 
 
-Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name(name:'admin.dashboard');
+Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name('admin.dashboard');
 
 
 
 // all routes of hen
 
-Route::get('/admin/hens',[HenController::class,'henlist'])->name(name:'admin.hens');
-Route::get('/admin/hens/create',[HenController::class,'createhenlist'])->name(name:'admin.hens.create');
-Route::post('/admin/hens/store',[HenController::class,'store'])->name(name:'admin.hens.store');
+Route::get('/admin/hens',[HenController::class,'henlist'])->name('admin.hens');
+Route::get('/admin/hens/create',[HenController::class,'createhenlist'])->name('admin.hens.create');
+Route::post('/admin/hens/store',[HenController::class,'store'])->name('admin.hens.store');
 Route::get('hen/view/{hen_id}',[HenController::class,'henDetails'])->name('admin.hen.details');
 Route::get('hen/delete/{hen_id}',[HenController::class,'henDelete'])->name('admin.hen.delete');
 
@@ -46,9 +63,9 @@ Route::get('hen/delete/{hen_id}',[HenController::class,'henDelete'])->name('admi
 
 // all routes of hen vaccine
 
-Route::get('/admin/hens/vaccine',[HenController::class,'vaccine'])->name(name:'admin.hens.vaccine');
-Route::get('/admin/hens/vaccine/create',[HenController::class,'createvaccine'])->name(name:'admin.hens.vaccine.create');
-Route::post('/admin/hens/vaccine/store2',[HenController::class,'store2'])->name(name:'admin.hens.vaccine.store2');
+Route::get('/admin/hens/vaccine',[HenController::class,'vaccine'])->name('admin.hens.vaccine');
+Route::get('/admin/hens/vaccine/create',[HenController::class,'createvaccine'])->name('admin.hens.vaccine.create');
+Route::post('/admin/hens/vaccine/store2',[HenController::class,'store2'])->name('admin.hens.vaccine.store2');
 
 
 
@@ -57,9 +74,9 @@ Route::post('/admin/hens/vaccine/store2',[HenController::class,'store2'])->name(
 
 
 // all routes of  food 
-Route::get('/admin/hens/food',[HenController::class,'food'])->name(name:'admin.hens.food');
-Route::get('/admin/hens/food/create',[HenController::class,'createfood'])->name(name:'admin.hens.food.create');
-Route::post('/admin/hens/food/store3',[HenController::class,'store3'])->name(name:'admin.hens.food.store3');
+Route::get('/admin/hens/food',[HenController::class,'food'])->name('admin.hens.food');
+Route::get('/admin/hens/food/create',[HenController::class,'createfood'])->name('admin.hens.food.create');
+Route::post('/admin/hens/food/store3',[HenController::class,'store3'])->name('admin.hens.food.store3');
 
 
 
@@ -67,17 +84,28 @@ Route::post('/admin/hens/food/store3',[HenController::class,'store3'])->name(nam
 
 // all type of hentype
 
-Route::get('/admin/hentype',[TypeController::class,'hentype'])->name(name:'admin.hentype');
-Route::get('/admin/hentype/create',[TypeController::class,'createhentype'])->name(name:'admin.hentype.create');
-Route::post('/admin/hentype/store',[TypeController::class,'store'])->name(name:'admin.hentype.store');
+Route::get('/admin/hentype',[TypeController::class,'hentype'])->name('admin.hentype');
+Route::get('/admin/hentype/create',[TypeController::class,'createhentype'])->name('admin.hentype.create');
+Route::post('/admin/hentype/store',[TypeController::class,'store'])->name('admin.hentype.store');
 
 
 
 // routes of egg
 
-Route::get('/admin/eggs',[EggController::class,'egglist'])->name(name:'admin.eggs');
+Route::get('/admin/eggs',[EggController::class,'egglist'])->name('admin.eggs');
 Route::get('/admin/eggs/create',[EggController::class,'createegglist'])->name('admin.eggs.create');
-Route::post('/admin/eggs/store',[EggController::class,'store'])->name(name:'admin.eggs.store');
+Route::post('/admin/eggs/store',[EggController::class,'store'])->name('admin.eggs.store');
+Route::get('egg/view/{egg_id}',[EggController::class,'eggDetails'])->name('admin.egg.details');
+Route::get('egg/delete/{egg_id}',[EggController::class,'eggDelete'])->name('admin.egg.delete');
+
+
+
+
+
+
+Route::get('/admin/stock',[StockController::class,'stocklist'])->name('admin.stocks');
+Route::get('/admin/stock/create',[StockController::class,'createstocklist'])->name('admin.stock.create');
+Route::get('/stock/details/{id}',[StockController::class,'stockDetails'])->name('admin.stock.details');
 
 
 
@@ -85,8 +113,9 @@ Route::post('/admin/eggs/store',[EggController::class,'store'])->name(name:'admi
 
 
 
-Route::get('/admin/stock',[StockController::class,'stocklist'])->name(name:'admin.stocks');
-Route::get('/admin/stock/create',[StockController::class,'createstocklist'])->name(name:'admin.stock.create');
+Route::get('/admin/customer',[CustomerController::class,'customer'])->name('admin.customer');
+Route::get('/admin/customer/create',[CustomerController::class,'createcustomer'])->name('admin.customer.create');
+Route::post('admin/customer/store',[CustomerController::class,'store'])->name('admin.customer.store');
 
 
 
@@ -94,19 +123,11 @@ Route::get('/admin/stock/create',[StockController::class,'createstocklist'])->na
 
 
 
-Route::get('/admin/customer',[CustomerController::class,'customer'])->name(name:'admin.customer');
-Route::get('/admin/customer/create',[CustomerController::class,'createcustomer'])->name(name:'admin.customer.create');
-Route::post('admin/customer/store',[CustomerController::class,'store'])->name(name:'admin.customer.store');
+Route::get('/admin/records',[RecordController::class,'recordlist'])->name('admin.records');
+Route::get('/admin/records/create',[RecordController::class,'createrecordlist'])->name('admin.records.create');
+Route::post('admin/records/store',[RecordController::class,'store'])->name('admin.records.store');
 
 
 
-
-
-
-
-Route::get('/admin/records',[RecordController::class,'recordlist'])->name(name:'admin.records');
-Route::get('/admin/records/create',[RecordController::class,'createrecordlist'])->name(name:'admin.records.create');
-Route::post('admin/records/store',[RecordController::class,'store'])->name(name:'admin.records.store');
-
-
-
+    });
+});

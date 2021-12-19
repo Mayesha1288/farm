@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRecords extends Migration
+class CreateRecordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,7 @@ class CreateRecords extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
             $table->integer('hens_died');
             $table->integer('sick_hens');
             $table->integer('vaccinated_hens');

@@ -1,11 +1,12 @@
 @extends ('admin.welcome')
 
 @section('contents')
-<a href="/admin/records/create" class="btn btn-success">Create Record list</a>
+<a href="{{route('admin.records.create')}}" class="btn btn-success">Create Record list</a>
 <table class="table table-hover">
   <thead>
     <tr>
     <th scope="col">ID</th>
+    <th scope="col">  Date</th>
       <th scope="col">Hens Died</th>
       <th scope="col">Sick Hens</th>
       <th scope="col">vaccinated hens</th>
@@ -21,6 +22,7 @@
   @foreach($recordlist as $record)
     <tr>
     <th > {{$record->id}}</th>
+    <th > {{$record->date}}</th>
         <th > {{$record->hens_died}}</th>
         <th>{{$record->sick_hens}}</th>
         <th>{{$record->vaccinated_hens}}</th>

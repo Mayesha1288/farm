@@ -26,6 +26,11 @@
 <form   action="{{route('admin.records.store')}}" method="post">
   @csrf
   <div class="form-group">
+    <label for="exampleInputEmail1">Date</label>
+    <input required name="date" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+  </div>
+  <div class="form-group">
     <label for="exampleInputEmail1">Total Hens died</label>
     <input required name="hens_died" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
     <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->

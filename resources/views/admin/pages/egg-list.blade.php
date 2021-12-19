@@ -15,6 +15,7 @@
         <th scope="col">Price</th>
         <th scope="col">Quantity</th>
         <th> Image</th>
+        <th scope="col">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -30,6 +31,11 @@
         <th>
                     <img src="{{url('/uploads/'.$egg->image)}}" width="100px" alt="egg image">
                 </th>
+
+                <td>
+                        <a class="btn btn-primary" href="{{route('admin.egg.details',$egg->id)}}">View</a>
+                        <a class="btn btn-danger" href="{{route('admin.egg.delete',$egg->id)}}">Delete</a>
+                    </td>
     </tr>
     @endforeach
     
