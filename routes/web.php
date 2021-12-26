@@ -89,6 +89,11 @@ Route::get('/admin/hentype/create',[TypeController::class,'createhentype'])->nam
 Route::post('/admin/hentype/store',[TypeController::class,'store'])->name('admin.hentype.store');
 
 
+Route::get('/admin/eggtype',[TypeController::class,'eggtype'])->name('admin.eggtype');
+Route::get('/admin/eggtype/create',[TypeController::class,'createeggtype'])->name('admin.eggtype.create');
+Route::post('/admin/eggtype/store2',[TypeController::class,'store2'])->name('admin.eggtype.store2');
+
+
 
 // routes of egg
 
@@ -126,6 +131,8 @@ Route::post('admin/customer/store',[CustomerController::class,'store'])->name('a
 Route::get('/admin/records',[RecordController::class,'recordlist'])->name('admin.records');
 Route::get('/admin/records/create',[RecordController::class,'createrecordlist'])->name('admin.records.create');
 Route::post('admin/records/store',[RecordController::class,'store'])->name('admin.records.store');
+Route::get('admin/view/{record_id}',[RecordController::class,'recordDetails'])->name('admin.record.details');
+Route::get('admin/delete/{record_id}',[RecordController::class,'recordDelete'])->name('admin.record.delete');
 
 
 

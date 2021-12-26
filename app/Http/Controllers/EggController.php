@@ -10,7 +10,7 @@ class EggController extends Controller
 {
     public function egglist()
     {
-        $eggs=Egg::all();
+        $eggs=Egg::with('eggtype')->get();
         return view ('admin.pages.egg-list',compact('eggs'));
     }
     public function createegglist()

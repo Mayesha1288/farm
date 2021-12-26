@@ -2,7 +2,7 @@
 
 
 @section('contents')
-    <h1>Hen Details</h1>
+  <center>  <h1>Hen Details</h1>
 
    
 <p> Type : {{$hen->name}}</p>
@@ -19,3 +19,4 @@
     <input type="file" class="form-control">
 
 @endsection
+</center>

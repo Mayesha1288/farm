@@ -38,7 +38,7 @@
             <!-- <i class="material-icons opacity-10">dashboard</i> -->
             <i class="fas fa-search"></i>
             </div>
-            <span class="nav-link-text ms-1">Hen Type</span>
+            <span class="nav-link-text ms-1">Types of Hen and Egg</span>
           </a>
         <li>
           <a class="nav-link text-white active bg-gradient-primary" href="{{route('admin.eggs')}}">

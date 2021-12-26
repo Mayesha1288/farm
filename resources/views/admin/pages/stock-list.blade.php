@@ -27,7 +27,7 @@
         <a href="{{route('admin.stock.details',$hen->id)}}" class="btn btn-primary">View</a>
       </td>
     </tr>
-    @endforeach
+    <!-- @endforeach -->
   </tbody>
 </table>
 

@@ -5,13 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Egg extends Model
+class Eggtype extends Model
 {
     use HasFactory;
-    protected $guarded=[];
-
-    public function eggtype()
-    {
-        return $this->belongsTo(Egg::class);
-    }
+     protected $guarded=[];
 }

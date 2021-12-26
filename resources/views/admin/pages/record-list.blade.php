@@ -12,6 +12,7 @@
       <th scope="col">vaccinated hens</th>
       <th scope="col">eggs collected</th>
       <th scope="col">eggs damaged</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -28,6 +29,11 @@
         <th>{{$record->vaccinated_hens}}</th>
         <th>{{$record->eggs_collected}}</th>
         <th >{{$record->eggs_damaged}}</th>
+        
+        <td>
+                        <a class="btn btn-primary" href="{{route('admin.record.details',$record->id)}}">View</a>
+                        <a class="btn btn-danger" href="{{route('admin.record.delete',$record->id)}}">Delete</a>
+                    </td>
     </tr>
     @endforeach
     

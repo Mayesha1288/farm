@@ -16,7 +16,7 @@
     <meta name="keywords"
           content="unique login form,leamug login form,boostrap login form,responsive login form,free css html login form,download login form">
     <meta name="author" content="leamug">
-    <title>Unique Login Form | Bootstrap Templates</title>
+    <title>My POULTRY Farm| Where we get the fresh products</title>
     <link href="css/style.css" rel="stylesheet" id="style">
     <!-- Bootstrap core Library -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -33,7 +33,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-offset-5 col-md-4 text-center">
-            <h1 class='text-white'>Unique Login Form</h1>
+            <h1 class='text-white'>My Poultry Farm !!!!!!</h1>
               <div class="form-login"></br>
                 <h4>Secure Login</h4>
                 </br>

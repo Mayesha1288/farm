@@ -34,4 +34,19 @@ class RecordController extends Controller
     ]);
     return redirect()->back()->with('msg','Records created successfully.');
    }
+   public function recordDetails($record_id)
+    {
+ 
+ //        collection= get(), all()====== read with loop (foreach)
+ //       object= first(), find(), findOrFail(),======direct
+      $record=Record::find($record_id);
+ //      $product=Product::where('id',$product_id)->first();
+        return view('admin.pages.recorddetails',compact('record'));
+    }
+ 
+    public function recordDelete($record_id)
+    {
+       Record::find($record_id)->delete();
+       return redirect()->back()->with('success','Record Deleted.');
+    }
 }
