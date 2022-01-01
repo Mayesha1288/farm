@@ -1,22 +1,13 @@
 @extends ('admin.welcome')
 
 @section('contents')
-<center>
-<form action="{{route('admin.record.search')}}" method="GET">
-<ul class="navbar-nav">
 
-  <center>
-<li class="col-md-4">
-<input type="text" placeholder="Search.." name="search">
-<button type="submit">Submit</button>
-  </li>
-</center>
-</ul>
-    </form>
-</center>
 
-<a href="{{route('admin.records.create',)}}" class="btn btn-success">Create Record list</a>
+<h3>Searched Record list</h3>
 
+<a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
+
+<div id="PrintTableArea">
 <table class="table table-hover">
   <thead>
     <tr>
@@ -35,7 +26,7 @@
   <!-- first we will write the variables name and then write the name which isgiven in the  database table -->
     <!-- the first one is the one which is written in compact and the next one is variable -->
     <!-- foreach is used for loop -->
-  @foreach($recordlist as $record)
+  @foreach($records as $record)
     <tr>
     <th > {{$record->id}}</th>
     <th > {{$record->date}}</th>
@@ -48,11 +39,23 @@
         <td>
                         <a class="btn btn-primary" href="{{route('admin.record.details',$record->id)}}">View</a>
                         <a class="btn btn-danger" href="{{route('admin.record.delete',$record->id)}}">Delete</a>
+                        <br>
                         <a class="btn btn-danger" href="{{route('admin.record.edit',$record->id)}}">Update</a>
                     </td>
     </tr>
     @endforeach
     
   </tbody>
-</table>
+  </table>
+  </div>
+<script type="text/javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
+
 @endsection

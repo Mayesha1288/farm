@@ -12,6 +12,6 @@ class Egg extends Model
 
     public function eggtype()
     {
-        return $this->belongsTo(Egg::class);
+        return $this->belongsTo(Eggtype::class);
     }
 }

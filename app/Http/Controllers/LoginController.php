@@ -38,13 +38,13 @@ class LoginController extends Controller
             return redirect()->route('admin.dashboard');
         }
         else
-        return redirect()->route('admin.login');
+        return redirect()->route('admin.login')->with('msg',' Invalid Email and Password.');
 
     }
 
     public function logout(){
         Auth::logout();
-        return redirect()->route('#');
+        return redirect()->back();
     }
 
 }

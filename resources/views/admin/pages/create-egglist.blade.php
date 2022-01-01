@@ -31,7 +31,13 @@
   @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Egg Type</label>
-    <input required name="egg_type" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+    <select name="egg_type" class="form-control" id="exampleInputEmail1"> 
+    @foreach($eggtypes as $eggtype)
+ 
+      <option value="{{$eggtype->eggtype}}"> {{$eggtype->eggtype}} </option>
+      @endforeach
+    </select>
+    <!-- <input required name="egg_type" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""> -->
     <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
   </div>
   <div class="form-group">

@@ -78,6 +78,7 @@
             <span class="nav-link-text ms-1">Records</span>
           </a>
         </li>
+        @if(auth()->user()->role=='admin')
         <li>
           <a class="nav-link text-white active bg-gradient-primary" href="">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -95,6 +96,7 @@
             <span class="nav-link-text ms-1">Sales</span>
           </a>
         </li>
+        @endif
 
         
        

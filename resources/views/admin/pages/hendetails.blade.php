@@ -5,7 +5,7 @@
   <center>  <h1>Hen Details</h1>
 
    
-<p> Type : {{$hen->name}}</p>
+<p> Type : {{$hen->type}}</p>
 <p>Weight: {{$hen->weight}}</p>
 <p>Price: <h4><span style="color: orange">BDT {{$hen->price}}</span></h4> </p>
 <p>Quantity: {{$hen->quantity}}</p>
@@ -18,5 +18,5 @@
     <input type="text" class="form-control" value="{{$hen->type}}">
     <input type="file" class="form-control">
 
-@endsection
-</center>
+ </center>
+ @endsection

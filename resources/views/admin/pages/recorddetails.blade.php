@@ -2,6 +2,9 @@
 
 
 @section('contents')
+
+<center>
+<div id="PrintTableArea">
     <h1>Record Details</h1>
 
     <p> Date :{{$record->date}}</p>  
@@ -11,10 +14,19 @@
 <p>Eggs Collected :{{$record->eggs_collected}}</p>
 <p >Eggs Damaged:{{$record->eggs_damaged}}</p>
 
+        
 
+<button  class="btn btn-primary" type="button" onClick="PrintDiv('PrintTableArea');" >Print</button>
+</center>
+</div>
 
-
-    <lable>Record Type:</lable>
-    <input type="text" class="form-control" value="{{$record->type}}">
-    <input type="file" class="form-control">
+<script language="javascript">
+    function PrintDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 @endsection

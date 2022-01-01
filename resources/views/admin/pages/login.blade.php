@@ -1,3 +1,4 @@
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -8,6 +9,21 @@
 
 <!--author:starttemplate-->
 <!--reference site : starttemplate.com-->
+
+
+
+@if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div>
+                <p class="alert alert-danger">{{$error}}</p>
+            </div>
+        @endforeach
+    @endif
+
+    @if(session()->has('msg'))
+        <p class="alert alert-success">{{session()->get('msg')}}</p>
+    @endif
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

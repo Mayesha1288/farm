@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Egg;
+use App\Models\Eggtype;
 use Illuminate\Http\Request;
 
 class EggController extends Controller
@@ -15,7 +16,8 @@ class EggController extends Controller
     }
     public function createegglist()
     {
-        return view('admin.pages.create-egglist');
+        $eggtypes=Eggtype::all();
+        return view('admin.pages.create-egglist',compact('eggtypes'));
     }
     public function store(Request $request){
         // dd($request->all());
@@ -51,5 +53,12 @@ class EggController extends Controller
     {
        Egg::find($egg_id)->delete();
        return redirect()->back()->with('success','Egg Deleted.');
+    }
+    public function eggSearch(){
+        // dd(request()->all());
+        $key = request()->search;
+        $eggs = Egg::where('type','LIKE',"%{$key}%")->get();
+        // dd($products);
+        return view('admin.pages.search-egg',compact('eggs'));
     }
 }

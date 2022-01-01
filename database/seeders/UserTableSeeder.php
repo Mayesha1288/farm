@@ -18,7 +18,17 @@ class UserTableSeeder extends Seeder
             'username'=>'Admin',
             'email'=>'admin@gmail.com',
             'password'=>bcrypt('12345'),
-            'contact'=>'01234568891'
+            'contact'=>'01234568891',
+            'role'=>'admin'
+
+        ]);
+
+        User::create([
+            'username'=>'Manager',
+            'email'=>'manager@gmail.com',
+            'password'=>bcrypt('67890'),
+            'contact'=>'01234567891',
+            'role'=>'manager'
 
         ]);
     }

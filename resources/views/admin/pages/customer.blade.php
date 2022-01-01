@@ -10,6 +10,7 @@
       <th scope="col">Customer Address</th>
       <th scope="col">Customer Number</th>
       <th scope="col">Customer Description</th>
+      <th scope="col">Action</th>
      
     </tr>
   </thead>
@@ -24,7 +25,10 @@
         <th>{{$customers->address}}</th>
         <th>{{$customers->phone_number}}</th>
         <th>{{$customers->customer_description}}</th>
-        
+        <td>
+                        <a class="btn btn-primary" href="{{route('admin.customer.details',$customers->id)}}">View</a>
+        </td>
+
     </tr>
     @endforeach
 

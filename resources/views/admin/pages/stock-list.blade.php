@@ -1,6 +1,7 @@
 @extends ('admin.welcome')
 
 @section('contents')
+
 <a href="/admin/stock/create" class="btn btn-success">Create Stock list</a>
 <table class="table table-hover">
   <thead>
@@ -8,6 +9,8 @@
       <th scope="col">Type</th>
       <!-- <th scope="col">Price</th>
       <th scope="col">Quantity</th> -->
+
+
       <th scope="col">Action</th>
     </tr>
   </thead>

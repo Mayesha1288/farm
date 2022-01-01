@@ -48,5 +48,55 @@ class RecordController extends Controller
     {
        Record::find($record_id)->delete();
        return redirect()->back()->with('success','Record Deleted.');
+
+    } 
+
+
+
+    public function recordEdit($id)
+    {
+
+        $record=Record::find($id);
+//        $product=Product::where('user_id',$id)->first();
+
+   // dd($record);
+       
+//        dd($all_categories);
+        return view('admin.pages.edit-recordlist',compact('record'));
+
+    }
+
+    public function recordUpdate(Request $request,$id)
+    {
+
+
+        $record=Record::find($id);
+
+//        Product::where('column','value')->udpate([
+//            'column'=>'request form field name'
+//        ]);
+
+       
+
+
+        $record->update([
+            // field name from db || field name from form
+            'date'=>$request->date,
+            'hens_died'=>$request->hens_died,
+            'sick_hens'=>$request->sick_hens,
+            'vaccinated_hens'=>$request->vaccinated_hens,
+            'eggs_collected'=>$request->eggs_collected,
+            'eggs_damaged'=>$request->eggs_damaged,
+
+        ]);
+        return redirect()->route('admin.records')->with('success','Record Updated Successfully.');
+    }
+
+    public function recordSearch(){
+        // dd(request()->all());
+        $key = request()->search;
+        $records = Record::where('date','LIKE',"%{$key}%")->get();
+         //dd($record);
+        return view('admin.pages.search-record',compact('records'));
     }
 }

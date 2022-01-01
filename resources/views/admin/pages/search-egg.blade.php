@@ -1,17 +1,14 @@
 @extends('admin.welcome')
 
 @section('contents')
-<h1> Hi .this is the egg list</h1>
+<h1> Hi .this is the searched egg list</h1>
 
 
 <!-- to link this button in this route -->
-<a href="{{route('admin.eggs.create')}}" class="btn btn-success">Create Egg list</a>
-<form action="{{route('admin.egg.search')}}" method="GET">
-    <div class="input-group mb-3">
-        <input name="search" type="text" class="form-control" placeholder="Search">
-        <!-- <button class="btn btn-success" type="submit">Search</button> -->
-    </div>
-</form>
+
+<a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
+
+<div id="PrintTableArea">
 <table class="table table-hover">
     <thead>
     <tr>
@@ -27,8 +24,10 @@
 <!-- first we will write the variables name and then write the name which isgiven in the  database table -->
     <!-- the first one is the one which is written in compact and the next one is variable -->
     <!-- foreach is used for loop -->
+
        @foreach($eggs as $egg)
     <tr>
+       
         <th > {{$egg->id}}</th>
         <th>{{$egg->type}}</th>
         <th>{{$egg->price}}</th>
@@ -43,8 +42,17 @@
                     </td>
     </tr>
     @endforeach
-    
     </tbody>
 </table>
+</div>
+<script language="javascript">
+    function PrintDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 
 @endsection

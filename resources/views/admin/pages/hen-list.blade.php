@@ -1,7 +1,7 @@
 @extends ('admin.welcome')
 
 @section('contents')
-<a href="/admin/hens/create" class="btn btn-success">Create Hen list</a>
+<a href="{{route('admin.hens.create')}}" class="btn btn-success">Create Hen list</a>
 <a href="{{route('admin.hens.vaccine')}}" class="btn btn-primary">Check the Vaccine </a>
 <a href="{{route('admin.hens.food')}}" class="btn btn-info">Check the Food </a>
 
@@ -11,7 +11,7 @@
         <th scope="col">Id</th>
         <th scope="col">Type</th>
         <th scope="col">Weight</th>
-        <th scope="col">Price</th>
+        <th scope="col">Price/kg</th>
         <th scope="col">Quantity</th>
         <th scope="col">Description</th>
         <th>Image</th>

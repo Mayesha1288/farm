@@ -31,4 +31,14 @@ class CustomerController extends Controller
     ]);
     return redirect()->back()->with('msg','Customer Inserted  successfully.');
 }
+
+public function customerDetails($customer_id)
+    {
+ 
+ //        collection= get(), all()====== read with loop (foreach)
+ //       object= first(), find(), findOrFail(),======direct
+      $customer=Customer::find($customer_id);
+ //      $product=Product::where('id',$product_id)->first();
+        return view('admin.pages.customerdetails',compact('customer'));
+    }
 }

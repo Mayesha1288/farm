@@ -102,6 +102,7 @@ Route::get('/admin/eggs/create',[EggController::class,'createegglist'])->name('a
 Route::post('/admin/eggs/store',[EggController::class,'store'])->name('admin.eggs.store');
 Route::get('egg/view/{egg_id}',[EggController::class,'eggDetails'])->name('admin.egg.details');
 Route::get('egg/delete/{egg_id}',[EggController::class,'eggDelete'])->name('admin.egg.delete');
+Route::get('admin/egg/search',[EggController::class,'eggSearch'])->name('admin.egg.search');
 
 
 
@@ -121,6 +122,7 @@ Route::get('/stock/details/{id}',[StockController::class,'stockDetails'])->name(
 Route::get('/admin/customer',[CustomerController::class,'customer'])->name('admin.customer');
 Route::get('/admin/customer/create',[CustomerController::class,'createcustomer'])->name('admin.customer.create');
 Route::post('admin/customer/store',[CustomerController::class,'store'])->name('admin.customer.store');
+Route::get('customer/view/{customer_id}',[CustomerController::class,'customerDetails'])->name('admin.customer.details');
 
 
 
@@ -133,6 +135,9 @@ Route::get('/admin/records/create',[RecordController::class,'createrecordlist'])
 Route::post('admin/records/store',[RecordController::class,'store'])->name('admin.records.store');
 Route::get('admin/view/{record_id}',[RecordController::class,'recordDetails'])->name('admin.record.details');
 Route::get('admin/delete/{record_id}',[RecordController::class,'recordDelete'])->name('admin.record.delete');
+Route::get('admin/edit/{record_id}',[RecordController::class,'recordEdit'])->name('admin.record.edit');
+Route::put('admin/update/{record_id}',[RecordController::class,'recordUpdate'])->name('admin.record.update');
+Route::get('admin/record/search',[RecordController::class,'recordSearch'])->name('admin.record.search');
 
 
 

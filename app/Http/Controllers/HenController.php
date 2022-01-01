@@ -17,7 +17,7 @@ class HenController extends Controller
    }
    public function createhenlist()
    {
-    
+    // dd("ok");
     return view('admin.pages.create-henlist');
    }
 

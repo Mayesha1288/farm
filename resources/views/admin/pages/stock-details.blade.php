@@ -8,7 +8,7 @@
       <th scope="col">Type</th>
       <th scope="col">Price</th>
       <th scope="col">Quantity</th>
-      <th scope="col">Action</th>
+      <!-- <th scope="col">Action</th> -->
     </tr>
   </thead>
   <tbody>
