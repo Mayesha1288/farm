@@ -36,8 +36,8 @@
         <option > eggs of deshi hens</option>
         <option > brown eggs of broiler hens</option>
         <option > white eggs of broiler hens</option>
-        <option > eggs of pakistani eggs</option>
-        <option > eggs of layer eggs</option>
+        <option > eggs of pakistani hens</option>
+        <option > eggs of layer hens</option>
 </select>
 
   </div>

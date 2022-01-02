@@ -14,9 +14,7 @@
         <img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$hen->image)}}" alt="hen image">
     </p>
 
-    <lable>Hen Type:</lable>
-    <input type="text" class="form-control" value="{{$hen->type}}">
-    <input type="file" class="form-control">
+    
 
  </center>
  @endsection

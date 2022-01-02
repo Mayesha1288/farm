@@ -25,7 +25,7 @@
     @endif
 
 
-<form   action="{{route('admin.record.update',$record)}}" method="post">
+<form   action="{{route('admin.record.update',$record->id)}}" method="post">
   @csrf
   @method('put')
   <div class="form-group">
@@ -53,7 +53,7 @@
 
   <div class="form-group">
     <label for="exampleInputPassword1">Total Eggs Damaged</label>
-    <input name="eggs_damaged" value="{{$record->eggs_damaged}} type="number" class="form-control" id="exampleInputPassword1" placeholder="">
+    <input name="eggs_damaged" value="{{$record->eggs_damaged}}" type="number" class="form-control" id="exampleInputPassword1" placeholder="">
   </div>
  
 

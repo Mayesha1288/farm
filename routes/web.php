@@ -56,6 +56,9 @@ Route::get('/admin/hens/create',[HenController::class,'createhenlist'])->name('a
 Route::post('/admin/hens/store',[HenController::class,'store'])->name('admin.hens.store');
 Route::get('hen/view/{hen_id}',[HenController::class,'henDetails'])->name('admin.hen.details');
 Route::get('hen/delete/{hen_id}',[HenController::class,'henDelete'])->name('admin.hen.delete');
+Route::get('admin/edit/{hen_id}',[HenController::class,'henEdit'])->name('admin.hen.edit');
+Route::put('admin/update/{hen_id}',[HenController::class,'henUpdate'])->name('admin.hen.update');
+Route::get('admin/hen/search',[HenController::class,'henSearch'])->name('admin.hen.search');
 
 
 
@@ -135,8 +138,8 @@ Route::get('/admin/records/create',[RecordController::class,'createrecordlist'])
 Route::post('admin/records/store',[RecordController::class,'store'])->name('admin.records.store');
 Route::get('admin/view/{record_id}',[RecordController::class,'recordDetails'])->name('admin.record.details');
 Route::get('admin/delete/{record_id}',[RecordController::class,'recordDelete'])->name('admin.record.delete');
-Route::get('admin/edit/{record_id}',[RecordController::class,'recordEdit'])->name('admin.record.edit');
-Route::put('admin/update/{record_id}',[RecordController::class,'recordUpdate'])->name('admin.record.update');
+Route::get('admin/record/edit/{record_id}',[RecordController::class,'recordEdit'])->name('admin.record.edit');
+Route::put('admin/record/update/{record_id}',[RecordController::class,'recordUpdate'])->name('admin.record.update');
 Route::get('admin/record/search',[RecordController::class,'recordSearch'])->name('admin.record.search');
 
 

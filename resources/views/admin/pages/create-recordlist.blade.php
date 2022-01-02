@@ -37,20 +37,20 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Total Hens Sick</label>
-    <input name="sick_hens" type="number" class="form-control" id="exampleInputPassword1" placeholder="">
+    <input required name="sick_hens" type="number" class="form-control" id="exampleInputPassword1" placeholder="">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Total hens given vaccine</label>
-    <input name="vaccinated_hens" type="number" class="form-control" id="exampleInputPassword1" placeholder="">
+    <input  required name="vaccinated_hens" type="number" class="form-control" id="exampleInputPassword1" placeholder="">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Total Eggs Collected</label>
-    <input name="eggs_collected" type="number" class="form-control" id="exampleInputPassword1" placeholder="">
+    <input  required name="eggs_collected" type="number" class="form-control" id="exampleInputPassword1" placeholder="">
   </div>
 
   <div class="form-group">
     <label for="exampleInputPassword1">Total Eggs Damaged</label>
-    <input name="eggs_damaged"  type="number" class="form-control" id="exampleInputPassword1" placeholder="">
+    <input  required name="eggs_damaged"  type="number" class="form-control" id="exampleInputPassword1" placeholder="">
   </div>
  
 

@@ -6,9 +6,12 @@
 
 <!-- to link this button in this route -->
 
-<a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
+
+
+<a href="#" class="btn btn-warning" onclick="PrintDiv('PrintTableArea')">Print</a>
 
 <div id="PrintTableArea">
+
 <table class="table table-hover">
     <thead>
     <tr>

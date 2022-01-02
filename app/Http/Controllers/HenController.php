@@ -125,5 +125,50 @@ class HenController extends Controller
       Hen::find($hen_id)->delete();
       return redirect()->back()->with('success','Hen Deleted.');
    }
+
+   public function henEdit($id)
+    {
+
+        $hen=Hen::find($id);
+//        $product=Product::where('user_id',$id)->first();
+
+   // dd($record);
+       
+//        dd($all_categories);
+if($hen){
+
+
+        return view('admin.pages.edit-henlist',compact('hen'));
+}
+    }
+
+    public function henUpdate(Request $request,$id)
+    {
+        $hen=Hen::find($id);
+        $filename = $hen->image;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = date('Ymdhms').'.'.$file->getclientOriginalExtension();
+            $file->storeAs('/uploads',$filename);
+        }
+        $hen->update([
+            // field name from db || field name from form
+            'type'=>$request->type,
+            'weight'=>$request->weight,
+            'price'=>$request->price,
+            'quantity'=>$request->quantity,
+            'description'=>$request->description,
+            'image'=>$filename
+        ]);
+        return redirect()->route('admin.hens')->with('msg','Hen  Updated Successfully.');
+    }
+
+    public function henSearch(){
+        // dd(request()->all());
+        $key = request()->search;
+        $hens = Hen::where('type','LIKE',"%{$key}%")->get();
+         //dd($record);
+        return view('admin.pages.search-hen',compact('hens'));
+    }
 }
 

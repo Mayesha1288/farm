@@ -1,6 +1,11 @@
 @extends ('admin.welcome')
 
 @section('contents')
+
+
+@if(session()->has('msg'))
+        <p class="alert alert-success">{{session()->get('msg')}}</p>
+    @endif
 <center>
 <form action="{{route('admin.record.search')}}" method="GET">
 <ul class="navbar-nav">
@@ -48,7 +53,7 @@
         <td>
                         <a class="btn btn-primary" href="{{route('admin.record.details',$record->id)}}">View</a>
                         <a class="btn btn-danger" href="{{route('admin.record.delete',$record->id)}}">Delete</a>
-                        <a class="btn btn-danger" href="{{route('admin.record.edit',$record->id)}}">Update</a>
+                        <a class="btn btn-info" href="{{route('admin.record.edit',$record->id)}}">Update</a>
                     </td>
     </tr>
     @endforeach

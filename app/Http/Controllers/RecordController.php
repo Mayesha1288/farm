@@ -47,7 +47,7 @@ class RecordController extends Controller
     public function recordDelete($record_id)
     {
        Record::find($record_id)->delete();
-       return redirect()->back()->with('success','Record Deleted.');
+       return redirect()->back()->with('msg','Record Deleted.');
 
     } 
 
@@ -62,7 +62,10 @@ class RecordController extends Controller
    // dd($record);
        
 //        dd($all_categories);
+if($record)
+{
         return view('admin.pages.edit-recordlist',compact('record'));
+}
 
     }
 
@@ -89,7 +92,7 @@ class RecordController extends Controller
             'eggs_damaged'=>$request->eggs_damaged,
 
         ]);
-        return redirect()->route('admin.records')->with('success','Record Updated Successfully.');
+        return redirect()->route('admin.records')->with('msg','Record Updated Successfully.');
     }
 
     public function recordSearch(){

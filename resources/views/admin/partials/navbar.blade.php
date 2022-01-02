@@ -17,9 +17,9 @@
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
               <a href="{{route('admin.logout')}}" class="nav-link text-body font-weight-bold px-0">
-              <a class="nav-link px-3" href="{{route('admin.logout')}}"> ({{auth()->user()->role}}) | Sign out</a>
+              <a class="nav-link px-3" href="{{route('admin.logout')}}"> ({{auth()->user()->role}}) ||LOGOUT</a>
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">LOGOUT</span>
+                <!-- <span class="d-sm-inline d-none">LOGOUT</span> -->
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
