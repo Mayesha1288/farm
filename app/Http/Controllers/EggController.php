@@ -11,13 +11,14 @@ class EggController extends Controller
 {
     public function egglist()
     {
-        $eggs=Egg::with('eggtype')->get();
+        $eggs=Egg::with('eggType')->get();
         return view ('admin.pages.egg-list',compact('eggs'));
     }
     public function createegglist()
     {
-        $eggtypes=Eggtype::all();
-        return view('admin.pages.create-egglist',compact('eggtypes'));
+        $egg=Eggtype::all();
+        // dd($egg);
+        return view('admin.pages.create-egglist',compact('egg'));
     }
     public function store(Request $request){
         // dd($request->all());
@@ -45,6 +46,7 @@ class EggController extends Controller
  //        collection= get(), all()====== read with loop (foreach)
  //       object= first(), find(), findOrFail(),======direct
       $egg=Egg::find($egg_id);
+
  //      $product=Product::where('id',$product_id)->first();
         return view('admin.pages.eggdetails',compact('egg'));
     }
@@ -52,7 +54,7 @@ class EggController extends Controller
     public function eggDelete($egg_id)
     {
        Egg::find($egg_id)->delete();
-       return redirect()->back()->with('success','Egg Deleted.');
+       return redirect()->back()->with('msg','Egg Deleted.');
     }
     public function eggSearch(){
         // dd(request()->all());
@@ -60,5 +62,30 @@ class EggController extends Controller
         $eggs = Egg::where('type','LIKE',"%{$key}%")->get();
         // dd($products);
         return view('admin.pages.search-egg',compact('eggs'));
+    }
+    public function eggEdit($id)
+    {
+        $egg=Egg::find($id);
+        $eggTypes=Eggtype::select('id','eggtype')->get();
+        return view('admin.pages.edit-egglist',compact('egg','eggTypes'));
+    }
+
+    public function eggUpdate(Request $request,$id)
+    {
+        $egg=Egg::find($id);
+        $filename = $egg->image;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = date('Ymdhms').'.'.$file->getclientOriginalExtension();
+            $file->storeAs('/uploads',$filename);
+        }
+        $egg->update([
+            // field name from db || field name from form
+            'type'=>$request->egg_type,
+            'price'=>$request->egg_price,
+            'quantity'=>$request->egg_quantity,
+            'image'=>$filename
+        ]);
+        return redirect()->route('admin.eggs')->with('msg','Egg  Updated Successfully.');
     }
 }

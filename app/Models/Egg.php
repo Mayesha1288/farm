@@ -10,8 +10,8 @@ class Egg extends Model
     use HasFactory;
     protected $guarded=[];
 
-    public function eggtype()
+    public function eggType()
     {
-        return $this->belongsTo(Eggtype::class);
+        return $this->belongsTo(Eggtype::class,'type','id');
     }
 }

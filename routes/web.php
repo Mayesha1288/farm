@@ -48,6 +48,11 @@ Route::group(['prefix'=>'admin'],function (){
 Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name('admin.dashboard');
 
 
+Route::get('/admin/profile',[DashboardController::class,'profile'])->name('admin.profile');
+
+
+
+
 
 // all routes of hen
 
@@ -105,6 +110,8 @@ Route::get('/admin/eggs/create',[EggController::class,'createegglist'])->name('a
 Route::post('/admin/eggs/store',[EggController::class,'store'])->name('admin.eggs.store');
 Route::get('egg/view/{egg_id}',[EggController::class,'eggDetails'])->name('admin.egg.details');
 Route::get('egg/delete/{egg_id}',[EggController::class,'eggDelete'])->name('admin.egg.delete');
+Route::get('admin/egg/edit/{egg_id}',[EggController::class,'eggEdit'])->name('admin.egg.edit');
+Route::put('admin/egg/update/{egg_id}',[EggController::class,'eggUpdate'])->name('admin.egg.update');
 Route::get('admin/egg/search',[EggController::class,'eggSearch'])->name('admin.egg.search');
 
 
@@ -115,6 +122,7 @@ Route::get('admin/egg/search',[EggController::class,'eggSearch'])->name('admin.e
 Route::get('/admin/stock',[StockController::class,'stocklist'])->name('admin.stocks');
 Route::get('/admin/stock/create',[StockController::class,'createstocklist'])->name('admin.stock.create');
 Route::get('/stock/details/{id}',[StockController::class,'stockDetails'])->name('admin.stock.details');
+Route::get('/eggstock/details/{id}',[StockController::class,'eggstockDetails'])->name('admin.egg-stock.details');
 
 
 

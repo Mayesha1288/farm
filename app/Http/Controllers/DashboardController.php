@@ -10,4 +10,8 @@ class DashboardController extends Controller
     {
         return view('admin.pages.dashboard');
     }
+    public function profile()
+    {
+        return view('admin.partials.admin-profile');
+    }
 }

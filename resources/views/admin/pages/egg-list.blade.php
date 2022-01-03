@@ -3,7 +3,10 @@
 @section('contents')
 <h1> Hi .this is the egg list</h1>
 
-
+@if(session()->has('msg'))
+        <p class="alert alert-success">{{session()->get('msg')}}</p>
+    @endif
+    
 <!-- to link this button in this route -->
 <a href="{{route('admin.eggs.create')}}" class="btn btn-success">Create Egg list</a>
 <form action="{{route('admin.egg.search')}}" method="GET">
@@ -30,7 +33,7 @@
        @foreach($eggs as $egg)
     <tr>
         <th > {{$egg->id}}</th>
-        <th>{{$egg->type}}</th>
+        <th>{{$egg->eggType->eggtype}}</th>
         <th>{{$egg->price}}</th>
         <th>{{$egg->quantity}}</th>
         <th>
@@ -40,6 +43,7 @@
                 <td>
                         <a class="btn btn-primary" href="{{route('admin.egg.details',$egg->id)}}">View</a>
                         <a class="btn btn-danger" href="{{route('admin.egg.delete',$egg->id)}}">Delete</a>
+                        <a class="btn btn-info" href="{{route('admin.egg.edit',$egg->id)}}">Update</a>
                     </td>
     </tr>
     @endforeach

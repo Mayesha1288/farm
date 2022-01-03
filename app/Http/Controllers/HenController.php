@@ -140,7 +140,7 @@ if($hen){
 
         return view('admin.pages.edit-henlist',compact('hen'));
 }
-    }
+}
 
     public function henUpdate(Request $request,$id)
     {

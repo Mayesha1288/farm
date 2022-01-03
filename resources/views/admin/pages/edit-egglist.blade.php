@@ -25,33 +25,32 @@
 
 
 
-
-<form action="{{route('admin.eggs.store')}}" method='post' enctype="multipart/form-data">
+<form action="{{route('admin.egg.update',$egg->id)}}" method='post' enctype="multipart/form-data">
 
   @csrf
+  @method('put')
   <div class="form-group">
     <label for="exampleInputEmail1">Egg Type</label>
-    <select name="egg_type" class="form-control" id="exampleInputEmail1"> 
-      @foreach($egg as $eggtype)
-        
-        <option value="{{$eggtype-> id}}"> {{$eggtype->eggtype}} </option>
-        @endforeach
+    <select name="egg_type" value="{{$egg->type}}" class="form-control" id="exampleInputEmail1"> 
+     @foreach($eggTypes as $eggtype)
+      <option value="{{$eggtype->id}}" {{$egg->type == $eggtype->id ? 'selected' : ''}}>{{$eggtype->eggtype}}</option>
+      @endforeach
     </select>
-    <!-- <input required name="egg_type" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""> -->
-    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Egg Price</label>
-    <input required name="egg_price" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+    <input required name="egg_price" value='{{$egg->price}}'  type="text" class="form-control" id="exampleInputPassword1" placeholder="">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Egg Quantity</label>
-    <input required name="egg_quantity" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+    <input required name="egg_quantity" value='{{$egg->quantity}}'  type="text" class="form-control" id="exampleInputPassword1" placeholder="">
   </div>
   <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Upload Eggs Image</label>
-            <input required name="image" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input  name="image" value='{{$egg->image}}'  type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
+  <br>
   <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
 </form>
 
