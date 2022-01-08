@@ -9,6 +9,7 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RecordController;
+use App\Http\Controllers\PaymentController;
 
 
 
@@ -151,6 +152,11 @@ Route::put('admin/record/update/{record_id}',[RecordController::class,'recordUpd
 Route::get('admin/record/search',[RecordController::class,'recordSearch'])->name('admin.record.search');
 
 
+
+
+Route::get('/admin/payment',[PaymentController::class,'payment'])->name('admin.payment');
+Route::get('/admin/payment/create',[PaymentController::class,'createpayment'])->name('admin.payment.create');
+Route::post('admin/payment/store',[PaymentController::class,'store'])->name('admin.payment.store');
 
     });
 });

@@ -2,13 +2,11 @@
 
 
 @section('contents')
-
+<button  class="btn btn-primary" type="button" onClick="PrintDiv('PrintTableArea');" >Print</button>
 
 <center>
-    <h1>Egg Details</h1>
-    <a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
-
 <div id="PrintTableArea">
+    <h1>Egg Details</h1>
 <p> Type : {{$egg->type}}</p>
 <p>Price: <h4><span style="color: orange">BDT {{$egg->price}}</span></h4> </p>
 <p>Quantity: {{$egg->quantity}}</p>
@@ -16,8 +14,8 @@
 <p>
         <img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$egg->image)}}" alt="egg image">
     </p>
-
-
+    <!-- <button  class="btn btn-primary" type="button" onClick="PrintDiv('PrintTableArea');" >Print</button> -->
+</center>
 </div>
 
 <script language="javascript">
@@ -29,5 +27,4 @@
         document.body.innerHTML = originalContents;
     }
 </script>
-</center>
 @endsection

@@ -3,6 +3,7 @@
 
 @section('contents')
 <center>
+<div id="PrintTableArea">
     <h1>Customer Details</h1>
 
     <p> Customer ID :     {{$customer->id}}</p>  
@@ -13,9 +14,17 @@
 
 
 
-
+<button  class="btn btn-primary" type="button" onClick="PrintDiv('PrintTableArea');" >Print</button>
 </center>
-    <!-- <lable>Record Type:</lable>
-    <input type="text" class="form-control" value="{{$customer->type}}">
-    <input type="file" class="form-control"> -->
+</div>
+
+<script language="javascript">
+    function PrintDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 @endsection

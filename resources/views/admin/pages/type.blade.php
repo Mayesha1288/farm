@@ -6,6 +6,10 @@
 <a href="{{route('admin.hentype.create')}}" class="btn btn-success">Create the Hen Type</a>
 <a href="{{route('admin.eggtype.create')}}" class="btn btn-info">Create the Egg Type</a>
 
+<button  class="btn btn-primary" type="button" onClick="PrintDiv('PrintTableArea');" >Print</button>
+
+<center>
+<div id="PrintTableArea">
 <table class="table table-hover">
     <thead>
     <tr>
@@ -47,5 +51,16 @@
         @endforeach
         </tbody>
 </table>
+</center>
+</div>
 
+<script language="javascript">
+    function PrintDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 @endsection
